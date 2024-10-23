@@ -149,7 +149,6 @@ class Program //начало программы
                                     new []  {InlineKeyboardButton.WithCallbackData(text: "📖Зачетная книжка", callbackData: "zach")},
                                     new []  {InlineKeyboardButton.WithCallbackData(text: "📬Предложения", callbackData: "predloz")},
                                     new []  {InlineKeyboardButton.WithCallbackData(text: "⚙️Настройки", callbackData: "settings")},
-                                    new []  {InlineKeyboardButton.WithCallbackData(text: "🔄Обновить", callbackData: "update")},
                                     new []  {InlineKeyboardButton.WithCallbackData(text: "💔Выход", callbackData: "exit")}
                                     });
                                     await botClient.EditMessageTextAsync(chat.Id, messageId: message.MessageId, $"Чем я могу вам помочь?", replyMarkup: mainmenu);
