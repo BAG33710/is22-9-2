@@ -50,11 +50,11 @@ class Program //начало программы
                         var user = message?.From;
                         var chat = message?.Chat;
 
-                        Console.WriteLine($"{user?.FirstName} ({user?.Id}) написал(а) сообщение: {message?.Text}"); /*Это выводит что пользователь вводит*/
                         switch (message?.Type)
                         {
                             case MessageType.Text:
                                 {
+                                    Console.WriteLine($"{user?.FirstName} ({user?.Id}) написал(а) сообщение: {message?.Text}"); /*Это выводит что пользователь вводит*/
                                     if (message.Text == "/start") /*О, инлайн кейборд. Эта короче кнопка под сообщениями, дальше будет прописано как применять*/
                                     {
                                         InlineKeyboardMarkup firstmenu = new(new[]
@@ -81,12 +81,12 @@ class Program //начало программы
                                     Console.WriteLine($"Пользователь {user?.FirstName} поделился информацией: Вот его номер:({contact?.PhoneNumber})");
                                     InlineKeyboardMarkup mainmenu = new(new[]
                                     {new []  {InlineKeyboardButton.WithCallbackData(text: "👤Мой профиль", callbackData: "profile")}, /*Тут и так понятно, callbackData: "mainmenu" - вернёт вас в эту менюшку, ОБРАТИТЕ ВНИМАНИЕ НА НАЗВАНИЯ!! */
-                                        new []  {InlineKeyboardButton.WithCallbackData(text: "📝Текущая успеваемость", callbackData: "usp")},
-                                        new []  {InlineKeyboardButton.WithWebApp("🗓Расписание", new WebAppInfo() {Url = "https://sielom.ru/schedule"})},
-                                        new []  {InlineKeyboardButton.WithCallbackData(text: "📖Зачетная книжка", callbackData: "zach")},
-                                        new []  {InlineKeyboardButton.WithCallbackData(text: "📬Предложения", callbackData: "predloz")},
-                                        new []  {InlineKeyboardButton.WithCallbackData(text: "⚙️Настройки", callbackData: "settings")},
-                                        new []  {InlineKeyboardButton.WithCallbackData(text: "💔Выход", callbackData: "exit")}
+                                    new []  {InlineKeyboardButton.WithCallbackData(text: "📝Текущая успеваемость", callbackData: "usp")},
+                                    new []  {InlineKeyboardButton.WithWebApp("🗓Расписание", new WebAppInfo() {Url = "https://sielom.ru/schedule"})},
+                                    new []  {InlineKeyboardButton.WithCallbackData(text: "📖Зачетная книжка", callbackData: "zach")},
+                                    new []  {InlineKeyboardButton.WithCallbackData(text: "📬Предложения", callbackData: "predloz")},
+                                    new []  {InlineKeyboardButton.WithCallbackData(text: "⚙️Настройки", callbackData: "settings")},
+                                    new []  {InlineKeyboardButton.WithCallbackData(text: "💔Выход", callbackData: "exit")}
                                     });
                                     try
                                     {
